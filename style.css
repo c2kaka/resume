@@ -1,65 +1,178 @@
 body {
-    background: black;
-    color: white;
-    margin: 0;
+  background: black;
+  margin: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .clearfix::after {
-    content: '';
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .topNavBar {
-    padding: 20px 16px;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.topNavBar-inner {
+  padding: 0 16px;
 }
 
 .topNavBar nav {
-    font-size: 13px;
-    padding-top: 8px;
-    padding-bottom: 9px;
+  font-size: 13px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .topNavBar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.topNavBar nav ul>li {
-    float: left;
-    margin-left: 17px;
-    margin-right: 17px;
+.topNavBar nav ul > li {
+  float: left;
+  margin-left: 17px;
+  margin-right: 17px;
 }
 
-.topNavBar nav ul>li>a {
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: bold;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid transparent;
-    display: block;
+.topNavBar nav ul > li > a {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  display: block;
+  padding-bottom: 5px;
 }
 
-.topNavBar nav ul>li>a:hover {
-    border-bottom: 3px solid #DC6465;
+.topNavBar nav ul > li > a:hover {
+  border-bottom: 3px solid #dc6465;
 }
 
 .topNavBar .logo {
-    font-family: "Arial Black";
-    font-size: 24px;
-    padding-top: 3px;
-    padding-bottom: 4px;
+  font-family: "Arial Black";
+  font-size: 24px;
+  padding-top: 3px;
+  padding-bottom: 4px;
 }
 
 .topNavBar .logo .rs {
-    color: #e8676b;
-    margin-right: 4px;
+  color: #e8676b;
+  margin-right: 4px;
 }
 
 .topNavBar .logo .card {
-    color: #9a9da2;
+  color: #9a9da2;
+}
+
+.banner {
+  height: 510px;
+  width: 100%;
+}
+
+.banner .mask {
+  height: 510px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.userCard {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+}
+
+.userCard .pic {
+  float: left;
+}
+
+.userCard .text {
+  float: left;
+  width: 470px;
+  margin-left: 65px;
+}
+.userCard .picAndText {
+  padding: 50px;
+}
+
+.userCard .text .welcome {
+  background: #e6686a;
+  color: white;
+  padding: 4px 16px;
+  margin-bottom: 10px;
+  display: inline-block;
+  line-height: 22px;
+  position: relative;
+}
+
+.userCard .text .welcome .triangle {
+  border: 10px solid transparent;
+  width: 0;
+  border-left-color: #e6686a;
+  border-top-width: 0;
+  position: absolute;
+  top: 100%;
+  left: 4px;
+  display: block;
+}
+
+.userCard .text h1 {
+  margin-top: 18px;
+}
+
+.userCard .text hr {
+  margin: 20px 0;
+}
+
+.userCard .text dl > dd,
+.userCard .text dl > dt {
+  float: left;
+  padding: 5px 0;
+}
+
+.userCard .text dl > dd {
+  width: 70%;
+  color: #9da0a7;
+}
+
+.userCard .text dl > dt {
+  width: 30%;
+  font-weight: bold;
+}
+
+.userCard > footer.media {
+  background: #e6686a;
+  text-align: center;
+}
+
+.userCard > footer.media > a {
+  display: inline-block;
+  width: 40px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin: 16px;
+  padding: 5px 0;
+}
+
+.userCard > footer.media > a:hover {
+  background: #cf5d5f;
+}
+
+.userCard svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  vertical-align: top;
 }
