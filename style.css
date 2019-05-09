@@ -79,7 +79,9 @@ a {
 
 .banner {
   height: 510px;
-  width: 100%;
+  background-image: url("./img/rs-cover.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .banner .mask {
