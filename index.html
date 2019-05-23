@@ -77,9 +77,9 @@
 </head>
 
 <body>
-  <div class="site-welcome active" id="siteWelcome">
-    <div class="loading"></div>
-  </div>
+<!--  <div class="site-welcome active" id="siteWelcome">-->
+<!--    <div class="loading"></div>-->
+<!--  </div>-->
   <div class="topNavBar" id="topNavBar" >
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left; ">
@@ -118,7 +118,7 @@
   </div>
 
   <main>
-    <div id="siteAbout" class="userCard">
+    <div data-x id="siteAbout" class="userCard">
       <div class="picAndText clearfix">
         <div class="pic">
           <img src="./img/avatar.jpg" alt="头像" />
@@ -177,7 +177,7 @@
     </p>
   </main>
 
-  <section id="siteSkills" class="skills">
+  <section data-x id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -219,7 +219,7 @@
     </ol>
   </section>
 
-  <section id="sitePortfolio" class="portfolio">
+  <section data-x id="sitePortfolio" class="portfolio">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -257,14 +257,49 @@
       </div>
     </div>
   </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
   <script>
-    setTimeout(function () {
-      siteWelcome.classList.remove("active");
-    },888);
+    // setTimeout(function () {
+    //   siteWelcome.classList.remove("active");
+    // },888);
+    let specialTags=document.querySelectorAll("[data-x]");
+    for (let i=0;i<specialTags.length;i++){
+      specialTags[i].classList.add("offset");
+    }
+
+    findClosest();
 
     window.onscroll=function () {
       window.scrollY > 0 ? topNavBar.classList.add("sticky") : topNavBar.classList.remove("sticky");
+      findClosest();
     };
+
+    /**
+     * 找到离当前视口最近的模块
+     */
+    function findClosest(){
+        //find all elements with data-x
+      let datas=document.querySelectorAll("[data-x]");
+      let windowScrollY=window.scrollY;
+      let minIndex=0; //init minIndex as 0
+      for (let i=1;i<datas.length;i++){
+        let currentDistance=Math.abs(datas[i].offsetTop-windowScrollY);
+        let minDistance=Math.abs(datas[minIndex].offsetTop-windowScrollY);
+        if(currentDistance<minDistance){
+          minIndex=i;
+        }
+      }
+      datas[minIndex].classList.remove("offset");
+      let minSectionId=datas[minIndex].id;
+      let highLightLi=document.querySelector('a[href="#'+minSectionId+'"]').parentNode;
+      let brothersAndMe=highLightLi.parentNode.children;
+      for(let i=0;i<brothersAndMe.length;i++){
+        brothersAndMe[i].classList.remove("highLight");
+      }
+      highLightLi.classList.add("highLight");
+    }
+
 
     let menuTriggers = document.querySelectorAll("nav.menu > ul > li");
     for(let i=0;i<menuTriggers.length;i++){
@@ -283,7 +318,25 @@
         e.preventDefault();
         let href=e.currentTarget.getAttribute("href");
         let div=document.querySelector(href);
-        window.scrollTo(0, div.offsetTop-80);
+        let currentY=window.scrollY;
+        let targetY=div.offsetTop-80;
+        let distance=targetY-currentY;
+        // Setup the animation loop.
+        function animate(time) {
+          requestAnimationFrame(animate);
+          TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
+
+        let duration=Math.abs((distance/100)*200 > 400 ? 400 : (distance/100)*200);
+        let coords = { y: currentY }; // Start at currentY
+        let tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
+                .to({ y: targetY }, duration) // Move to targetY in duration
+                .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
+                .onUpdate(function() { // Called after tween.js updates 'coords'.
+                  window.scrollTo(0,coords.y);
+                })
+                .start(); // Start the tween immediately.
       }
     }
   </script>
