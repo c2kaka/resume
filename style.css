@@ -12,19 +12,19 @@ a {
   text-decoration: none;
 }
 
-ol{
+ol {
   list-style: none;
 }
 
-h3{
+h3 {
   font-weight: normal;
 }
 
-[data-x].offset{
+[data-x].offset {
   transform: translateY(200px);
 }
 
-[data-x]{
+[data-x] {
   transform: translateY(0);
   transition: all .5s;
 }
@@ -46,12 +46,12 @@ h3{
   transition: all .5s;
 }
 
-.topNavBar.sticky{
+.topNavBar.sticky {
   color: #3d4451;
   padding: 10px 0;
   background-color: white;
   z-index: 1;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .topNavBar-inner {
@@ -70,14 +70,14 @@ h3{
   margin: 0;
 }
 
-.topNavBar nav > ul > li {
+.topNavBar nav>ul>li {
   float: left;
   margin-left: 17px;
   margin-right: 17px;
   position: relative;
 }
 
-.topNavBar nav ul > li > a {
+.topNavBar nav ul>li>a {
   color: inherit;
   font-weight: bold;
   border-bottom: 3px solid transparent;
@@ -87,8 +87,8 @@ h3{
   position: relative;
 }
 
-.topNavBar nav ul > li.active > a::after,
-.topNavBar nav ul > li.highLight > a::after{
+.topNavBar nav ul>li.active>a::after,
+.topNavBar nav ul>li.highLight>a::after {
   content: "";
   display: block;
   height: 3px;
@@ -101,11 +101,11 @@ h3{
 }
 
 @keyframes menuSlide {
-  0%{
+  0% {
     width: 0;
   }
 
-  100%{
+  100% {
     width: 100%;
   }
 
@@ -113,7 +113,7 @@ h3{
 
 
 
-.subMenu{
+.subMenu {
   position: absolute;
   top: 100%;
   right: 0;
@@ -121,24 +121,24 @@ h3{
   background: white;
   color: #3d4451;
   animation: subMenuSlide .3s;
-  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes subMenuSlide {
-  0%{
+  0% {
     margin-right: 100%;
   }
 
-  100%{
+  100% {
     margin-right: 0;
   }
 }
 
-li.menuTrigger.active>.subMenu{
+li.menuTrigger.active>.subMenu {
   display: block;
 }
 
-.subMenu>li{
+.subMenu>li {
   white-space: nowrap;
   margin: 10px 20px;
   color: inherit;
@@ -178,8 +178,8 @@ li.menuTrigger.active>.subMenu{
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
-  margin-top:-340px;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
+  margin-top: -340px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .userCard .pic {
@@ -191,6 +191,7 @@ li.menuTrigger.active>.subMenu{
   width: 470px;
   margin-left: 65px;
 }
+
 .userCard .picAndText {
   padding: 50px;
 }
@@ -224,28 +225,28 @@ li.menuTrigger.active>.subMenu{
   margin: 20px 0;
 }
 
-.userCard .text dl > dd,
-.userCard .text dl > dt {
+.userCard .text dl>dd,
+.userCard .text dl>dt {
   float: left;
   padding: 5px 0;
 }
 
-.userCard .text dl > dd {
+.userCard .text dl>dd {
   width: 70%;
   color: #9da0a7;
 }
 
-.userCard .text dl > dt {
+.userCard .text dl>dt {
   width: 30%;
   font-weight: bold;
 }
 
-.userCard > footer.media {
+.userCard>footer.media {
   background: #e6686a;
   text-align: center;
 }
 
-.userCard > footer.media > a {
+.userCard>footer.media>a {
   display: inline-block;
   width: 40px;
   line-height: 30px;
@@ -254,7 +255,7 @@ li.menuTrigger.active>.subMenu{
   padding: 5px 0;
 }
 
-.userCard > footer.media > a:hover {
+.userCard>footer.media>a:hover {
   background: #cf5d5f;
 }
 
@@ -269,7 +270,7 @@ li.menuTrigger.active>.subMenu{
   text-align: center;
 }
 
-.download{
+.download {
   font-size: 14px;
   line-height: 16px;
   padding: 21px 55px;
@@ -283,11 +284,11 @@ li.menuTrigger.active>.subMenu{
   transition: box-shadow 0.2s;
 }
 
-.download:hover{
-  box-shadow: 0 4px 13px 0 rgba(0,0,0,0.3);
+.download:hover {
+  box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.3);
 }
 
-.selfIntroduction{
+.selfIntroduction {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
@@ -298,15 +299,15 @@ li.menuTrigger.active>.subMenu{
 }
 
 section.skills,
-section.portfolio{
+section.portfolio {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
 }
 
-section.skills > h2,
-section.portfolio > h2{
+section.skills>h2,
+section.portfolio>h2 {
   text-align: center;
   font-size: 34px;
   color: #3d4451;
@@ -315,29 +316,29 @@ section.portfolio > h2{
   margin-bottom: 10px;
 }
 
-section.skills h3{
+section.skills h3 {
   font-size: 14px;
   line-height: 1.1;
   padding-right: 40px;
 }
 
-section.skills > ol{
+section.skills>ol {
   background: white;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   padding: 42px 50px 10px;
 }
 
-section.skills > ol > li{
+section.skills>ol>li {
   float: left;
   width: 48%;
   box-sizing: border-box;
 }
 
-section.skills > ol > li:nth-child(even){
+section.skills>ol>li:nth-child(even) {
   float: right;
 }
 
-section.skills .progressBar{
+section.skills .progressBar {
   height: 5px;
   background: #FAE1E1;
   border-radius: 2px;
@@ -345,7 +346,7 @@ section.skills .progressBar{
   overflow: hidden;
 }
 
-section.skills .progressBar > .progress{
+section.skills .progressBar>.progress {
   height: 100%;
   width: 80%;
   background: #E6686A;
@@ -354,16 +355,37 @@ section.skills .progressBar > .progress{
   transition: all 1s;
 }
 
-section.skills.offset .progress{
+section.skills.offset .progress {
   transform: translateX(-100%);
 }
 
-section.portfolio{
+section.portfolio {
   text-align: center;
   margin-bottom: 100px;
+  max-width: 720px;
 }
 
-section.portfolio > nav{
+section.portfolio .swiper-container {
+  width: 680px;
+  height: 510px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  width: 64px;
+  height: 64px;
+  right: 100%;
+  left: auto;
+  border-radius: 50%;
+}
+
+.swiper-button-next {
+  left: 100%;
+  right: auto;
+}
+
+/* section.portfolio > nav{
   display: inline-block;
   vertical-align: top;
   margin-top: 32px;
@@ -422,4 +444,4 @@ section.portfolio > .works{
 section.portfolio > .works > .big,
 section.portfolio > .works > .small{
   position: absolute;
-}
+} */

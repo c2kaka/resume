@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./swiper.min.css">
   <link rel="stylesheet" href="./style.css">
   <script src="./js/iconfont.js"></script>
   <style>
@@ -16,36 +17,37 @@
       overflow: hidden;
     }
 
-    .site-welcome{
+    .site-welcome {
       display: none;
       background: #888;
       justify-content: center;
       align-items: center;
       position: fixed;
-      top:0;
+      top: 0;
       left: 0;
       height: 100%;
       width: 100%;
       z-index: 1;
     }
 
-    .site-welcome.active{
+    .site-welcome.active {
       display: flex;
     }
 
-    .loading{
+    .loading {
       height: 200px;
       width: 200px;
       position: relative;
     }
 
-    .loading::before,.loading::after{
+    .loading::before,
+    .loading::after {
       content: "";
       position: absolute;
       height: 0;
       width: 0;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       right: 0;
       bottom: 0;
       margin: auto;
@@ -54,33 +56,32 @@
       animation: loadingAnimation 1.5s linear infinite;
     }
 
-    .loading::after{
+    .loading::after {
       animation-delay: 0.75s;
     }
 
     @keyframes loadingAnimation {
-      0%{
+      0% {
         height: 0;
         width: 0;
         opacity: 1;
       }
 
-      100%{
+      100% {
         height: 100px;
         width: 100px;
         opacity: 0;
       }
     }
-
   </style>
   <title>欧阳帆 个人简历</title>
 </head>
 
 <body>
-<!--  <div class="site-welcome active" id="siteWelcome">-->
-<!--    <div class="loading"></div>-->
-<!--  </div>-->
-  <div class="topNavBar" id="topNavBar" >
+  <!--  <div class="site-welcome active" id="siteWelcome">-->
+  <!--    <div class="loading"></div>-->
+  <!--  </div>-->
+  <div class="topNavBar" id="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left; ">
         <span class="rs">RS</span><span class="card">card</span>
@@ -221,7 +222,22 @@
 
   <section data-x id="sitePortfolio" class="portfolio">
     <h2>作品集</h2>
-    <nav>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <img src="./img/appleLike-slide.jpg" alt="苹果风格轮播" class="swiper-slide">
+        <img src="./img/canvas.jpg" alt="canvas画板" class="swiper-slide">
+        <img src="./img/iNav.jpg" alt="苹果风格导航网站" class="swiper-slide">
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <!-- <nav>
       <ol class="clearfix">
         <li id="portfolioAll">所有</li>
         <li id="portfolioFrameWork">框架</li>
@@ -231,16 +247,16 @@
         <div class="bar-inner"></div>
       </div>
       <script>
-        portfolioAll.onclick=function(){
-          portfolioBar.className="bar state-1";
+        portfolioAll.onclick = function () {
+          portfolioBar.className = "bar state-1";
         }
 
-        portfolioFrameWork.onclick=function(){
-          portfolioBar.className="bar state-2";
+        portfolioFrameWork.onclick = function () {
+          portfolioBar.className = "bar state-2";
         }
 
-        portfolioNative.onclick=function(){
-          portfolioBar.className="bar state-3";
+        portfolioNative.onclick = function () {
+          portfolioBar.className = "bar state-3";
         }
       </script>
     </nav>
@@ -255,22 +271,23 @@
       <div class="small" style="top: 298px; left:645px;">
         <img src="./img/3.jpg" alt="作品3">
       </div>
-    </div>
+    </div> -->
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+  <script src='./js/swiper.min.js'></script>
   <script>
     // setTimeout(function () {
     //   siteWelcome.classList.remove("active");
     // },888);
-    let specialTags=document.querySelectorAll("[data-x]");
-    for (let i=0;i<specialTags.length;i++){
+    let specialTags = document.querySelectorAll("[data-x]");
+    for (let i = 0; i < specialTags.length; i++) {
       specialTags[i].classList.add("offset");
     }
 
     findClosest();
 
-    window.onscroll=function () {
+    window.onscroll = function () {
       window.scrollY > 0 ? topNavBar.classList.add("sticky") : topNavBar.classList.remove("sticky");
       findClosest();
     };
@@ -278,23 +295,23 @@
     /**
      * 找到离当前视口最近的模块
      */
-    function findClosest(){
-        //find all elements with data-x
-      let datas=document.querySelectorAll("[data-x]");
-      let windowScrollY=window.scrollY;
-      let minIndex=0; //init minIndex as 0
-      for (let i=1;i<datas.length;i++){
-        let currentDistance=Math.abs(datas[i].offsetTop-windowScrollY);
-        let minDistance=Math.abs(datas[minIndex].offsetTop-windowScrollY);
-        if(currentDistance<minDistance){
-          minIndex=i;
+    function findClosest() {
+      //find all elements with data-x
+      let datas = document.querySelectorAll("[data-x]");
+      let windowScrollY = window.scrollY;
+      let minIndex = 0; //init minIndex as 0
+      for (let i = 1; i < datas.length; i++) {
+        let currentDistance = Math.abs(datas[i].offsetTop - windowScrollY);
+        let minDistance = Math.abs(datas[minIndex].offsetTop - windowScrollY);
+        if (currentDistance < minDistance) {
+          minIndex = i;
         }
       }
       datas[minIndex].classList.remove("offset");
-      let minSectionId=datas[minIndex].id;
-      let highLightLi=document.querySelector('a[href="#'+minSectionId+'"]').parentNode;
-      let brothersAndMe=highLightLi.parentNode.children;
-      for(let i=0;i<brothersAndMe.length;i++){
+      let minSectionId = datas[minIndex].id;
+      let highLightLi = document.querySelector('a[href="#' + minSectionId + '"]').parentNode;
+      let brothersAndMe = highLightLi.parentNode.children;
+      for (let i = 0; i < brothersAndMe.length; i++) {
         brothersAndMe[i].classList.remove("highLight");
       }
       highLightLi.classList.add("highLight");
@@ -302,7 +319,7 @@
 
 
     let menuTriggers = document.querySelectorAll("nav.menu > ul > li");
-    for(let i=0;i<menuTriggers.length;i++){
+    for (let i = 0; i < menuTriggers.length; i++) {
       menuTriggers[i].onmouseenter = function (e) {
         e.currentTarget.classList.add("active");
       }
@@ -313,14 +330,14 @@
     }
 
     let aTags = document.querySelectorAll("nav.menu > ul > li > a");
-    for (let i=0;i<aTags.length;i++){
+    for (let i = 0; i < aTags.length; i++) {
       aTags[i].onclick = function (e) {
         e.preventDefault();
-        let href=e.currentTarget.getAttribute("href");
-        let div=document.querySelector(href);
-        let currentY=window.scrollY;
-        let targetY=div.offsetTop-80;
-        let distance=targetY-currentY;
+        let href = e.currentTarget.getAttribute("href");
+        let div = document.querySelector(href);
+        let currentY = window.scrollY;
+        let targetY = div.offsetTop - 80;
+        let distance = targetY - currentY;
         // Setup the animation loop.
         function animate(time) {
           requestAnimationFrame(animate);
@@ -328,17 +345,39 @@
         }
         requestAnimationFrame(animate);
 
-        let duration=Math.abs((distance/100)*200 > 400 ? 400 : (distance/100)*200);
-        let coords = { y: currentY }; // Start at currentY
+        let duration = Math.abs((distance / 100) * 200 > 400 ? 400 : (distance / 100) * 200);
+        let coords = {
+          y: currentY
+        }; // Start at currentY
         let tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-                .to({ y: targetY }, duration) // Move to targetY in duration
-                .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
-                .onUpdate(function() { // Called after tween.js updates 'coords'.
-                  window.scrollTo(0,coords.y);
-                })
-                .start(); // Start the tween immediately.
+          .to({
+            y: targetY
+          }, duration) // Move to targetY in duration
+          .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
+          .onUpdate(function () { // Called after tween.js updates 'coords'.
+            window.scrollTo(0, coords.y);
+          })
+          .start(); // Start the tween immediately.
       }
     }
+  </script>
+
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
   </script>
 </body>
 
