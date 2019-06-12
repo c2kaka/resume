@@ -8,6 +8,14 @@ body {
   margin: 0;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -383,6 +391,33 @@ section.portfolio .swiper-container {
 .swiper-button-next {
   left: 100%;
   right: auto;
+}
+
+section.message .postMessage {
+  width: 700px;
+  margin: 10px auto;
+  text-align: center;
+
+}
+
+section.message>h2 {
+  text-align: center;
+  font-size: 34px;
+  color: #3d4451;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+section.message ol.messageList {
+  max-width: 700px;
+  margin: 16px auto;
+  border-top: 1px solid #DDD;
+}
+
+section.message ol.messageList>li {
+  padding: 16px;
+  border-bottom: 1px solid #DDD;
 }
 
 /* section.portfolio > nav{
