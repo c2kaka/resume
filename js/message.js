@@ -15,7 +15,9 @@ query
     console.log(messages);
     messages.forEach(item => {
       let li = document.createElement("li");
-      li.innerText = `${item.attributes.name}:${item.attributes.content}`;
+      li.innerText = `${item.attributes.name || "匿名用户"}:${
+        item.attributes.content
+      }`;
       messageList.appendChild(li);
     });
   })
@@ -31,6 +33,7 @@ messageForm.addEventListener("submit", e => {
   let messageContent = messageForm.querySelector("input[name=messageContent]")
     .value;
   let name = messageForm.querySelector("input[name=name]").value;
+
   messageObject
     .save({
       content: messageContent,

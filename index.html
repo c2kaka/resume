@@ -1,207 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./swiper.min.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./loading.css" />
-    <script src="./js/iconfont.js"></script>
-    <title>欧阳帆 个人简历</title>
-  </head>
 
-  <body>
-    <!--  <div class="site-welcome active" id="siteWelcome">-->
-    <!--    <div class="loading"></div>-->
-    <!--  </div>-->
-    <div class="topNavBar" id="topNavBar">
-      <div class="topNavBar-inner clearfix">
-        <a class="logo" href="#" alt="logo" style="float: left; ">
-          <span class="rs">RS</span><span class="card">card</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./swiper.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./loading.css" />
+  <script src="./js/iconfont.js"></script>
+  <title>欧阳帆 个人简历</title>
+</head>
+
+<body>
+  <!--  <div class="site-welcome active" id="siteWelcome">-->
+  <!--    <div class="loading"></div>-->
+  <!--  </div>-->
+  <div class="topNavBar" id="topNavBar">
+    <div class="topNavBar-inner clearfix">
+      <a class="logo" href="#" alt="logo" style="float: left; ">
+        <span class="rs">RS</span><span class="card">card</span>
+      </a>
+      <nav class="menu" style="float: right;">
+        <ul class="clearfix">
+          <li><a href="#siteAbout">关于</a></li>
+          <li class="menuTrigger">
+            <a href="#siteSkills">技能</a>
+            <ul class="subMenu">
+              <li>技能1</li>
+              <li>技能2</li>
+              <li>技能3</li>
+            </ul>
+          </li>
+          <li class="menuTrigger">
+            <a href="#sitePortfolio">作品</a>
+            <ul class="subMenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li><a href="#">博客</a></li>
+          <li><a href="#">日历</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">其他</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="mask"></div>
+  </div>
+
+  <main>
+    <div data-x id="siteAbout" class="userCard">
+      <div class="picAndText clearfix">
+        <div class="pic">
+          <img src="./img/avatar.jpg" alt="头像" />
+        </div>
+        <div class="text">
+          <div class="profile">
+            <span class="welcome">Hello<span class="triangle"></span></span>
+            <h1>欧阳帆</h1>
+            <p>前端开发工程师</p>
+            <hr />
+            <dl>
+              <dt>年龄</dt>
+              <dd>27</dd>
+              <dt>所在城市</dt>
+              <dd>杭州</dd>
+              <dt>邮箱</dt>
+              <dd>ouyangfanseu@gmail.com</dd>
+              <dt>手机</dt>
+              <dd>13812345678</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <footer class="media">
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+          </svg>
         </a>
-        <nav class="menu" style="float: right;">
-          <ul class="clearfix">
-            <li><a href="#siteAbout">关于</a></li>
-            <li class="menuTrigger">
-              <a href="#siteSkills">技能</a>
-              <ul class="subMenu">
-                <li>技能1</li>
-                <li>技能2</li>
-                <li>技能3</li>
-              </ul>
-            </li>
-            <li class="menuTrigger">
-              <a href="#sitePortfolio">作品</a>
-              <ul class="subMenu">
-                <li>作品1</li>
-                <li>作品2</li>
-                <li>作品3</li>
-              </ul>
-            </li>
-            <li><a href="#">博客</a></li>
-            <li><a href="#">日历</a></li>
-            <li><a href="#">联系方式</a></li>
-            <li><a href="#">其他</a></li>
-          </ul>
-        </nav>
-      </div>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-qq"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-wechat"></use>
+          </svg>
+        </a>
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weibo"></use>
+          </svg>
+        </a>
+      </footer>
     </div>
 
-    <div class="banner">
-      <div class="mask"></div>
+    <p class="downloadWrapper">
+      <a class="download" href="./resume.pdf" target="_blank" class="button">下载PDF简历</a>
+    </p>
+
+    <p class="selfIntroduction">
+      欧阳帆， 前端开发工程师<br />
+      技能：前端开发，Java 开发，Node.js 开发
+    </p>
+  </main>
+
+  <section data-x id="siteSkills" class="skills">
+    <h2>技能</h2>
+    <ol class="clearfix">
+      <li>
+        <h3>HTML 5 &amp; CSS 3</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>jQuery</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Vue.js</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>React.js</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>Node.js</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section data-x id="sitePortfolio" class="portfolio">
+    <h2>作品集</h2>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <img src="./img/appleLike-slide.jpg" alt="苹果风格轮播" class="swiper-slide" />
+        <img src="./img/canvas.jpg" alt="canvas画板" class="swiper-slide" />
+        <img src="./img/iNav.jpg" alt="苹果风格导航网站" class="swiper-slide" />
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
     </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </section>
 
-    <main>
-      <div data-x id="siteAbout" class="userCard">
-        <div class="picAndText clearfix">
-          <div class="pic">
-            <img src="./img/avatar.jpg" alt="头像" />
-          </div>
-          <div class="text">
-            <div class="profile">
-              <span class="welcome">Hello<span class="triangle"></span></span>
-              <h1>欧阳帆</h1>
-              <p>前端开发工程师</p>
-              <hr />
-              <dl>
-                <dt>年龄</dt>
-                <dd>27</dd>
-                <dt>所在城市</dt>
-                <dd>杭州</dd>
-                <dt>邮箱</dt>
-                <dd>ouyangfanseu@gmail.com</dd>
-                <dt>手机</dt>
-                <dd>13812345678</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
+  <section id="message" class="message">
+    <h2>留言</h2>
+    <ol class="messageList" id="messageList"></ol>
+    <form action="postMessage" id="postMessage" class="postMessage">
+      <label for="name">用户名</label>
+      <input type="text" id="name" name="name" />
+      <label for="messageContent">内容</label>
+      <input type="text" id="messageContent" name="messageContent" required oninvalid="setCustomValidity('留言不能为空！')" oninput="setCustomValidity('')"/>
+      <input type="submit" value="提交" />
+    </form>
+  </section>
 
-        <footer class="media">
-          <a href="#">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-github"></use>
-            </svg>
-          </a>
-          <a href="#">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-qq"></use>
-            </svg>
-          </a>
-          <a href="#">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-wechat"></use>
-            </svg>
-          </a>
-          <a href="#">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-weibo"></use>
-            </svg>
-          </a>
-        </footer>
-      </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js"></script>
+  <script src="./js/auto-slide-up.js"></script>
+  <script src="./js/sticky-topBar.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/smoothly-nav.js"></script>
+  <script src="./js/swiper-init.js"></script>
+  <script src="./js/message.js"></script>
+</body>
 
-      <p class="downloadWrapper">
-        <a class="download" href="./resume.pdf" target="_blank" class="button"
-          >下载PDF简历</a
-        >
-      </p>
-
-      <p class="selfIntroduction">
-        欧阳帆， 前端开发工程师<br />
-        技能：前端开发，Java 开发，Node.js 开发
-      </p>
-    </main>
-
-    <section data-x id="siteSkills" class="skills">
-      <h2>技能</h2>
-      <ol class="clearfix">
-        <li>
-          <h3>HTML 5 &amp; CSS 3</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-        <li>
-          <h3>JavaScript</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-        <li>
-          <h3>jQuery</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-        <li>
-          <h3>Vue.js</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-        <li>
-          <h3>React.js</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-        <li>
-          <h3>Node.js</h3>
-          <div class="progressBar">
-            <div class="progress"></div>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section data-x id="sitePortfolio" class="portfolio">
-      <h2>作品集</h2>
-      <!-- Slider main container -->
-      <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <img
-            src="./img/appleLike-slide.jpg"
-            alt="苹果风格轮播"
-            class="swiper-slide"
-          />
-          <img src="./img/canvas.jpg" alt="canvas画板" class="swiper-slide" />
-          <img
-            src="./img/iNav.jpg"
-            alt="苹果风格导航网站"
-            class="swiper-slide"
-          />
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </section>
-
-    <section id="message" class="message">
-      <h2>留言</h2>
-      <ol class="messageList" id="messageList"></ol>
-      <form action="postMessage" id="postMessage" class="postMessage">
-        <label for="name">用户名</label>
-        <input type="text" id="name" name="name" />
-        <label for="messageContent">内容</label>
-        <input type="text" id="messageContent" name="messageContent" />
-        <input type="submit" value="提交" />
-      </form>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js"></script>
-    <script src="./js/auto-slide-up.js"></script>
-    <script src="./js/sticky-topBar.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script src="./js/smoothly-nav.js"></script>
-    <script src="./js/swiper-init.js"></script>
-    <script src="./js/message.js"></script>
-  </body>
 </html>
